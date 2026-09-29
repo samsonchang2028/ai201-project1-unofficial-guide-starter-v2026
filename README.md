@@ -90,18 +90,39 @@ Laundry costs $1.75 wash, $1.75 dry, app-based. On noise: moderate; the building
 
 ## Sample Answer
 
-**Question:**
+**Question:** How long is the lunch wait at Kestrel Commons between 12:15 and 1:00?
 
 **Answer:**
 
 ```text
+The wait time at Kestrel Commons between 12:15 and 1:00 is 20 to 25 minutes.
+
+Source: `dining_kestrel_commons.txt` (also mentioned in `dining_kestrel_commons_followup.txt`).
 ```
 
-**My relevance cutoff:**
+Sources retrieved: `dining_halden_hall_followup.txt`,
+`dining_kestrel_commons.txt`, `dining_kestrel_commons_followup.txt`,
+`dining_north_kitchen_followup.txt`, `dining_the_ridgeway_cafe_followup.txt`
+
+**My relevance cutoff:** 0.6
+
+My five in-corpus questions had best distances from 0.1797 to 0.3723. The five
+out-of-scope questions had best distances from 0.8246 to 0.9340. I kept the
+cutoff at 0.6 because it sits in the clear gap between those two groups: all of
+my real questions pass, and all of the unrelated questions are refused.
 
 | Question | In corpus? | Best distance |
 |---|---|---|
-|  |  |  |
+| Which student parking permit sells out quickly, and when does it go on sale? | Yes | 0.3723 |
+| How long is the lunch wait at Kestrel Commons between 12:15 and 1:00? | Yes | 0.1797 |
+| For juniors and seniors, what decides housing lottery order before the random tie-break? | Yes | 0.2467 |
+| How far ahead can students book group study rooms, and how long is each block? | Yes | 0.1893 |
+| How many times can students change their meal plan tier, and when must they do it? | Yes | 0.2351 |
+| What is the capital of Mongolia? | No | 0.8246 |
+| How do I change the oil in a diesel engine? | No | 0.9340 |
+| Who won the 1994 World Cup? | No | 0.8859 |
+| What is the recommended dosage of ibuprofen for a headache? | No | 0.8442 |
+| How do I write a for loop in Rust? | No | 0.8960 |
 
 ## How I Used AI
 
