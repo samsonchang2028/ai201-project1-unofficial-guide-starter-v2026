@@ -24,7 +24,16 @@
 <!-- Three or four sentences. Which corpus you picked, and the kinds of
      questions your system answers. Write it for someone who has never seen
      this repo.
+     
+     python app.py index
+     python app.py ask "is the housing lottery random?"
+     Corpus: campus_life
+  loaded   88 documents, 27,908 characters, ~317 characters per document
+  chunked  88 chunks, 317 characters on average (shortest 178, longest 549), produced by chunker.py::fallback_split
+  embedding 88 chunks (first run downloads the model)...
+  stored   88 chunks in 4.4s
 
+   (best distance 0.254, cutoff 0.6)
      Milestone 5. -->
 
 ## Chunking Strategy
@@ -55,7 +64,25 @@
 
 **Chunk 1** — source: `` — produced by: ``
 
-```
+```======================================================================
+Chunk 1  |  source: thread_bike_commute.txt#0  |  produced by: chunker.py::fallback_split
+======================================================================
+THREAD: Is a bike worth it for a 20 minute walk commute?
+
+--- reply 1 (14 votes) ---
+Yeah. Cuts an 18 minute walk to about 6. The thing nobody mentions is storage — covered bike parking exists at three buildings and is full by 9am at all three.
+
+--- reply 2 (9 votes) ---
+Counterpoint, I sold mine. Between November and March the paths are either icy or salted and salt destroys a drivetrain in one season.
+
+--- reply 3 (22 votes) ---
+Both true. I keep a cheap bike for September to November and walk the rest of the year. Total cost was about $120 for the bike and I don't care what happens to it.
+
+--- reply 4 (5 votes) ---
+If you do get one, the campus does free registration and it's the only reason I got mine back after it was taken.
+
+For each one, ask: could someone answer a question using only this,
+without reading what came before or after? Yes , i think someone could answer a question
 ```
 
 **Chunk 2** — source: `` — produced by: ``
