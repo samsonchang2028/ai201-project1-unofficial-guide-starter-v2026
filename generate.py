@@ -279,6 +279,7 @@ Rules:
 - Use only the information in the documents below. Do not use anything you know from elsewhere.
 - If the documents don't cover the question, say you don't have enough information. Do not guess.
 - Name the document your answer came from, using the filename given in each excerpt.
+- End every answer with a separate line in exactly this format: Source: filename.txt
 - Be brief. Two or three sentences is usually enough."""
 
 
@@ -297,7 +298,8 @@ def build_prompt(question: str, results) -> str:
     return (
         f"Documents:\n\n{context}\n\n"
         f"---\n\nQuestion: {question}\n\n"
-        f"Answer using only the documents above, and name the file you used."
+        f"Answer using only the documents above, and end with "
+        f"'Source: filename.txt' using the file you used."
     )
 
 
